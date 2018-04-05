@@ -5,15 +5,31 @@
 var foo = 10 + '20';
 ```
 
+*Answer:*
+```js
+let foo = '1020'
+```
+Due to type coercion, the number value becomes a string
+
 *Question: What will be the output of the code below?*
 ```javascript
 console.log(0.1 + 0.2 == 0.3);
 ```
 
+
 *Question: How would you make this work?*
 ```javascript
 add(2, 5); // 7
 add(2)(5); // 7
+```
+
+Currying:
+```javascript 
+const add = (...args)=>{
+  if(args.length > 1) return args.reduce(((a,b)=> a+b), 0)
+  return (...moreArgs) => add(...args, ...moreArgs)
+}
+
 ```
 
 *Question: What value is returned from the following statement?*
